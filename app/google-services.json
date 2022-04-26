@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "906584320465",
+    "project_id": "my-favourite-places-5fb6f",
+    "storage_bucket": "my-favourite-places-5fb6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906584320465:android:d676f0420dd228f2f558f0",
+        "android_client_info": {
+          "package_name": "com.fermelli.myfavouriteplaces"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906584320465-rkjq2gcg9a6aiuqp5hes4nt1em0eks4t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fermelli.myfavouriteplaces",
+            "certificate_hash": "ae7352b2921e0e5efb44e74252d8127cc3254bdb"
+          }
+        },
+        {
+          "client_id": "906584320465-ksp42124jjc3f07ofii0hsnvb3p2gotj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV50KxPZ8fL4KYKX-c94ca9LrQ0lOMJEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906584320465-ksp42124jjc3f07ofii0hsnvb3p2gotj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
