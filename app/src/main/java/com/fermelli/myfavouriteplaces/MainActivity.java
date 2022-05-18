@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button buttonCloseSession = findViewById(R.id.buttonCloseSession);
+        Button buttonUserData = findViewById(R.id.buttonUserData);
 
         buttonCloseSession.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+
+        buttonUserData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, UserActivity.class);
+                startActivity(intent);
             }
         });
     }
