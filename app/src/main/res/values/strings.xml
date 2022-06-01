@@ -2,4 +2,6 @@
     <string name="app_name">My Favourite Places</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_application_id" translatable="false">374204504766295</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb374204504766295</string>
 </resources>
