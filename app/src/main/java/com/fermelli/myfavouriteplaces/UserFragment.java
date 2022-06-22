@@ -1,14 +1,22 @@
 package com.fermelli.myfavouriteplaces;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -74,6 +82,30 @@ public class UserFragment extends Fragment {
         textViewEmail.setText(user.getEmail());
         textViewProvider.setText(user.getProviderId());
         textViewPhone.setText(phone);
+
+        RequestQueue queueRequest = Volley.newRequestQueue(getActivity().getApplicationContext());
+        ImageLoader imageLoader = new ImageLoader(queueRequest, new ImageLoader.ImageCache() {
+
+            private final LruCache<String, Bitmap> cache = new LruCache<String, Bitmap>(10);
+
+            @Nullable
+            @Override
+            public Bitmap getBitmap(String url) {
+                return cache.get(url);
+            }
+
+            @Override
+            public void putBitmap(String url, Bitmap bitmap) {
+                cache.put(url, bitmap);
+            }
+        });
+
+        Uri urlImage = user.getPhotoUrl();
+
+        if (urlImage != null) {
+            NetworkImageView networkImageView = (NetworkImageView) view.findViewById(R.id.image);
+            networkImageView.setImageUrl(urlImage.toString(), imageLoader);
+        }
         return view;
     }
 }
